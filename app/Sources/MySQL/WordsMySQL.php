@@ -3,11 +3,19 @@
 namespace App\Sources\MySQL;
 
 use App\Sources\Interfaces\WordsSource;
+use Illuminate\Database\DatabaseManager;
 
 class WordsMySQL implements WordsSource
 {
-    public function index()
+    protected $db;
+
+    public function __construct(DatabaseManager $databaseManager)
     {
-        die('WordsMySQL asdfasd asdafdfasd');
+        $this->db = $databaseManager;
+    }
+
+    public function index(): array
+    {
+        return $this->db->table('eff_short_wordlist')->get()->toArray();
     }
 }

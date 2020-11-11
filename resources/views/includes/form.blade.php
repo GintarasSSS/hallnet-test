@@ -5,7 +5,7 @@
                 <input placeholder="Long URL" type="url" name="url" required/>
             </div>
             <div class="col l4 m3 s12">
-                <input placeholder="Short URL keyword" type="text" name="text" />
+                <input placeholder="Short URL keyword" type="text" name="text" maxlength="140"/>
             </div>
             <label class="col l2 m3 s6">
                 <input type="checkbox" name="private"/>

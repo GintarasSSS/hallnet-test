@@ -16,6 +16,8 @@ class EffShortWordlist extends Migration
         Schema::create('eff_short_wordlist', function (Blueprint $table) {
             $table->id('__pk');
             $table->string('short_word');
+
+            $table->unique('short_word');
         });
     }
 

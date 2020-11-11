@@ -6,8 +6,8 @@
         @include('includes.header')
 
         <div class="container content">
-            @include('includes.form')
-            @include('includes.list')
+            @yield('form')
+            @yield('list')
         </div>
     </body>
 </html>

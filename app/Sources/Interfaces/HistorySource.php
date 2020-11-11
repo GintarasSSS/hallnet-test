@@ -2,7 +2,7 @@
 
 namespace App\Sources\Interfaces;
 
-interface WordsSource
+interface HistorySource
 {
     public function index(): array;
 }

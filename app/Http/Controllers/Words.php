@@ -16,6 +16,16 @@ class Words extends BaseController
     }
     public function index(): JsonResponse
     {
-        $this->src->index();
+        return response()->json(['payload' => $this->src->index()]);
+    }
+
+    public function show(): JsonResponse
+    {
+
+    }
+
+    public function store(): JsonResponse
+    {
+
     }
 }

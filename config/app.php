@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\WordsProvider::class,
+        App\Providers\HistoryProvider::class,
     ],
 
     /*
