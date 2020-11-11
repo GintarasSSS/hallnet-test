@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Sources\Interfaces\WordsSource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class Words extends BaseController
 {
@@ -24,8 +26,20 @@ class Words extends BaseController
 
     }
 
-    public function store(): JsonResponse
+    public function store(Request $request)
     {
+        $request->validate([
+            'url' => 'required|url',
+            'text' => 'string|max:140',
+            'private' => 'in:0,1'
+        ]);
 
+        $this->src->store(
+            $request->post('url'),
+            $request->post('text'),
+            $request->post('private', 0)
+        );
+
+        return redirect()->back();
     }
 }

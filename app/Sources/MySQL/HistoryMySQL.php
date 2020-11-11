@@ -23,6 +23,7 @@ class HistoryMySQL implements HistorySource
                 'um.description',
                 'um.private',
                 'um.created',
+                'esw.visited',
                 'esw.short_word'
             ])
             ->join('eff_short_wordlist AS esw', 'esw.__pk', '=', 'um._fk_pk_eff_short_wordlist')

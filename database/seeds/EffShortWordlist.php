@@ -30,7 +30,9 @@ class EffShortWordlist extends Seeder
             if (count($values) == 2) {
                 $result[] = [
                     '__pk' => (int)$values[0],
-                    'short_word' => $values[1]
+                    'short_word' => $values[1],
+                    'used' => 0,
+                    'visited' => 0
                 ];
             }
         }
