@@ -1,0 +1,21 @@
+.header {
+    background-color: white;
+    height: 12rem;
+
+    * {
+        height: inherit;
+        background-color: white;
+        box-shadow: none;
+    }
+
+    .col {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        .logo {
+            img {
+                height: 6rem;
+            }
+        }
+    }
+}

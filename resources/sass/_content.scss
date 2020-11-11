@@ -1,0 +1,53 @@
+.content {
+    font-size: 1.167rem;
+
+    h1 {
+        font-size: 1.833rem;
+        font-weight: bold;
+    }
+
+    a {
+        color: $blue;
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding-top: 3rem;
+        margin-bottom: 2.75rem;
+
+        & > * {
+            margin-bottom: 1rem;
+        }
+
+        * {
+            font-family: inherit;
+            color: inherit;
+        }
+
+        input[type=text], input[type=url] {
+            border: 1px solid $dark_grey;
+
+            &::placeholder {
+                color: inherit;
+                opacity: 0.5;
+            }
+        }
+
+        input[type=text],
+        input[type=url] {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            background-color: $blue;
+            color: white;
+            border: none;
+            outline:none;
+            padding-top: 0.31rem;
+            padding-bottom: 0.31rem;
+        }
+    }
+}

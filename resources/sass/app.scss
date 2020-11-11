@@ -1,0 +1,13 @@
+@import "materialize/materialize";
+@import "variables";
+
+html, body {
+    font-size: $base_font_size;
+    color: $dark_grey;
+    min-height: 100%;
+    background-color: $light_grey;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    @import "header";
+    @import "content";
+}
