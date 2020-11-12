@@ -7476,6 +7476,12 @@ html .content a,
 body .content a {
   color: #2979bc;
   font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+html .content a:hover,
+body .content a:hover {
+  text-decoration: none;
 }
 
 html .content form,
@@ -7538,5 +7544,24 @@ body .content form button {
   outline: none;
   padding-top: 0.31rem;
   padding-bottom: 0.31rem;
+}
+
+html .content ul.collection,
+body .content ul.collection {
+  border-color: #555555;
+}
+
+html .content ul.collection .url-wrapper,
+body .content ul.collection .url-wrapper {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+html .content ul.collection .collection-item,
+body .content ul.collection .collection-item {
+  border-bottom-color: inherit;
 }
 

@@ -2,13 +2,18 @@
     font-size: 1.167rem;
 
     h1 {
-        font-size: 1.833rem;
+        font-size: $h1_fontsize;
         font-weight: bold;
     }
 
     a {
         color: $blue;
-        font-size: 1.5rem;
+        font-size: $link_fontsize;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     form {
@@ -48,6 +53,22 @@
             outline:none;
             padding-top: 0.31rem;
             padding-bottom: 0.31rem;
+        }
+    }
+
+    ul.collection {
+        border-color: $dark_grey;
+
+        .url-wrapper {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            display: block;
+        }
+
+        .collection-item {
+            border-bottom-color: inherit;
         }
     }
 }

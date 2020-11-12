@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Sources\Interfaces\HistorySource;
+use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\URL;
 
 class Home extends BaseController
 {
@@ -18,7 +20,10 @@ class Home extends BaseController
     {
         return view(
             'pages.home',
-            $this->src->index()
+            [
+                'list' => $this->src->index(),
+                'currentUrl' => URL::current()
+            ]
         );
     }
 }
