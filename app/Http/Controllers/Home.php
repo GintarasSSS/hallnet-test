@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Sources\Interfaces\HistorySource;
-use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\URL;
 
