@@ -20,11 +20,6 @@ class Words extends BaseController
         return response()->json(['payload' => $this->src->index()]);
     }
 
-    public function show(): JsonResponse
-    {
-
-    }
-
     public function store(Request $request)
     {
         $request->validate([
