@@ -9,6 +9,7 @@ use Illuminate\Database\DatabaseManager;
 class WordsMySQL implements WordsSource
 {
     const WORD_LIST_TABLE = 'eff_short_wordlist';
+    const URL_MAPPING_TABLE = 'urls_mapping';
 
     protected $db;
     protected $carbon;
@@ -32,7 +33,7 @@ class WordsMySQL implements WordsSource
             return;
         }
 
-        $success = $this->db->table('urls_mapping')->insert([
+        $success = $this->db->table(self::URL_MAPPING_TABLE)->insert([
             '_fk_pk_eff_short_wordlist' => $result->__pk,
             'url' => $url,
             'description' => $description,

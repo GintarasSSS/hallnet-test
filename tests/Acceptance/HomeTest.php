@@ -3,12 +3,15 @@
 namespace Tests\Acceptance;
 
 use App\Sources\MySQL\HistoryMySQL;
+use Carbon\Carbon;
 use Illuminate\Database\DatabaseManager;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
 
 class HomeTest extends TestCase
 {
+    const MOCKED_DATE = '2 hours ago';
+
     public function testHomePage()
     {
         $parameters = [
@@ -25,11 +28,18 @@ class HomeTest extends TestCase
                 'url' => 'https://testUrl.co.uk',
                 'description' => 'test description test description',
                 'private' => '1',
-                'created' => '',
+                'created' => self::MOCKED_DATE,
                 'visited' => '9999',
                 'short_word' => 'testShortWord'
             ]
         ];
+
+        $this->mock(Carbon::class)
+            ->shouldReceive('parse')
+            ->with(self::MOCKED_DATE)
+            ->andReturnSelf()
+            ->shouldReceive('diffForHumans')
+            ->andReturn(self::MOCKED_DATE);
 
         $this->mock(DatabaseManager::class)
             ->shouldReceive('table')
