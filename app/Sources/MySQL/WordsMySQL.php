@@ -8,6 +8,8 @@ use Illuminate\Database\DatabaseManager;
 
 class WordsMySQL implements WordsSource
 {
+    const WORD_LIST_TABLE = 'eff_short_wordlist';
+
     protected $db;
     protected $carbon;
 
@@ -19,12 +21,12 @@ class WordsMySQL implements WordsSource
 
     public function index(): array
     {
-        return $this->db->table('eff_short_wordlist')->get()->toArray();
+        return $this->db->table(self::WORD_LIST_TABLE)->get()->toArray();
     }
 
     public function store(string $url, string $description, int $isPrivate): void
     {
-        $result = $this->db->table('eff_short_wordlist')->where('used', 0)->first();
+        $result = $this->db->table(self::WORD_LIST_TABLE)->where('used', 0)->first();
 
         if (!$result) {
             return;
@@ -39,12 +41,12 @@ class WordsMySQL implements WordsSource
         ]);
 
         if ($success) {
-            $this->db->table('eff_short_wordlist')->where('__pk', '=', $result->__pk)->update(['used' => 1]);
+            $this->db->table(self::WORD_LIST_TABLE)->where('__pk', '=', $result->__pk)->update(['used' => 1]);
         }
     }
 
     public function show(string $url): array
     {
-        return $this->db->table('eff_short_wordlist')->where('short_word', $url)->get()->toArray();
+        return $this->db->table(self::WORD_LIST_TABLE)->where('short_word', $url)->get()->toArray();
     }
 }

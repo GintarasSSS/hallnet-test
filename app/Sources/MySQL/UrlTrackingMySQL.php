@@ -7,6 +7,8 @@ use Illuminate\Database\DatabaseManager;
 
 class UrlTrackingMySQL implements UrlTrackingSource
 {
+    const WORD_LIST_TABLE = 'eff_short_wordlist';
+
     protected $db;
 
     public function __construct(DatabaseManager $databaseManager)
@@ -23,7 +25,7 @@ class UrlTrackingMySQL implements UrlTrackingSource
         $urlData = current($urlData);
 
         $this->db
-            ->table('eff_short_wordlist')
+            ->table(self::WORD_LIST_TABLE)
             ->where('__pk', '=', $urlData->__pk)
             ->update(
                 [
