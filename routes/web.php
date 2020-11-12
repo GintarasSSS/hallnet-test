@@ -19,3 +19,5 @@ Route::prefix('words')->group(function () {
     Route::get('', 'Words@index');
     Route::post('/store', 'Words@store');
 });
+
+Route::get('/{shortUrl}', 'UrlTracking@store');

@@ -42,4 +42,9 @@ class WordsMySQL implements WordsSource
             $this->db->table('eff_short_wordlist')->where('__pk', '=', $result->__pk)->update(['used' => 1]);
         }
     }
+
+    public function show(string $url): array
+    {
+        return $this->db->table('eff_short_wordlist')->where('short_word', $url)->get()->toArray();
+    }
 }

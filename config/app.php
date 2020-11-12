@@ -177,6 +177,7 @@ return [
 
         App\Providers\WordsProvider::class,
         App\Providers\HistoryProvider::class,
+        App\Providers\UrlTrackingProvider::class,
     ],
 
     /*

@@ -7,6 +7,8 @@ use Illuminate\Database\DatabaseManager;
 
 class HistoryMySQL implements HistorySource
 {
+    const RESULTS_LIMIT = 10;
+
     protected $db;
 
     public function __construct(DatabaseManager $databaseManager)
@@ -28,7 +30,7 @@ class HistoryMySQL implements HistorySource
             ])
             ->join('eff_short_wordlist AS esw', 'esw.__pk', '=', 'um._fk_pk_eff_short_wordlist')
             ->orderBy('um.created', 'desc')
-            ->limit(10)
+            ->limit(self::RESULTS_LIMIT)
             ->get()
             ->toArray();
     }
