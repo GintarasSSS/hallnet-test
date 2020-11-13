@@ -24,3 +24,5 @@ _**example**: DB_DATABASE=/var/www/html/hallnet-test/database/database.sqlite_
 **Start project itself:** `php artisan serve`
 
 **Project url:** http://127.0.0.1:8000/ 
+
+**Call words list endpoint:** http://127.0.0.1:8000/words
